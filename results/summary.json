@@ -1,0 +1,200 @@
+{
+  "data_source": "jtwc_bdeck_working_best_track",
+  "runway": {
+    "First position (UTC)": "2026-10-14 12:00:00",
+    "First position (lat, lon)": "9.6N, 161.2E",
+    "Last position (UTC)": "2026-10-24 12:00:00",
+    "Days tracked": "10.0",
+    "Track length (km)": "5211",
+    "Straight-line distance (km)": "4448",
+    "Peak wind (kt)": "160",
+    "Peak wind (km/h)": "296",
+    "Lowest pressure (hPa)": "895",
+    "Peak time (UTC)": "2026-10-20 18:00:00",
+    "Days from genesis to peak": "6.25",
+    "Days from typhoon strength to peak": "4.0",
+    "Days at typhoon strength or more (64+ kt)": "7.5",
+    "Days at major strength (96+ kt)": "6.0",
+    "Days at super typhoon strength (130+ kt)": "3.75",
+    "Largest 24 h strengthening (kt)": "65",
+    "Largest 24 h strengthening ends (UTC)": "2026-10-17 06:00:00",
+    "Rapid intensification (30+ kt in 24 h)": "True",
+    "Largest 24 h weakening (kt)": "50",
+    "Largest 24 h weakening ends (UTC)": "2026-10-24 06:00:00",
+    "Closest approach to Taiwan coast (km)": "48",
+    "Closest approach time (UTC)": "2026-10-23 18:00:00"
+  },
+  "best_growth_law": "Two-stage logistic",
+  "growth_curve_contest": [
+    {
+      "model": "Two-stage logistic",
+      "parameters": 6,
+      "ceiling_kt": 160.1,
+      "first_plateau_kt": 133.0,
+      "growth_rate_per_day": 2.599,
+      "midpoint_day": 2.32,
+      "shape_nu": NaN,
+      "second_surge_day": 5.91,
+      "second_surge_rate_per_day": 16.21,
+      "fastest_growth_kt_per_day": 109.8,
+      "rmse_kt": 4.87,
+      "AICc": 102.5,
+      "delta_AICc": 0.0,
+      "akaike_weight": 0.998
+    },
+    {
+      "model": "Logistic",
+      "parameters": 3,
+      "ceiling_kt": 138.1,
+      "first_plateau_kt": NaN,
+      "growth_rate_per_day": 2.292,
+      "midpoint_day": 2.38,
+      "shape_nu": NaN,
+      "second_surge_day": NaN,
+      "second_surge_rate_per_day": NaN,
+      "fastest_growth_kt_per_day": 61.9,
+      "rmse_kt": 7.8,
+      "AICc": 116.72,
+      "delta_AICc": 14.22,
+      "akaike_weight": 0.001
+    },
+    {
+      "model": "Gompertz",
+      "parameters": 3,
+      "ceiling_kt": 141.5,
+      "first_plateau_kt": NaN,
+      "growth_rate_per_day": 1.37,
+      "midpoint_day": 2.1,
+      "shape_nu": NaN,
+      "second_surge_day": NaN,
+      "second_surge_rate_per_day": NaN,
+      "fastest_growth_kt_per_day": 56.2,
+      "rmse_kt": 7.84,
+      "AICc": 116.96,
+      "delta_AICc": 14.46,
+      "akaike_weight": 0.001
+    },
+    {
+      "model": "Richards",
+      "parameters": 4,
+      "ceiling_kt": 139.4,
+      "first_plateau_kt": NaN,
+      "growth_rate_per_day": 1.809,
+      "midpoint_day": 2.27,
+      "shape_nu": 0.51,
+      "second_surge_day": NaN,
+      "second_surge_rate_per_day": NaN,
+      "fastest_growth_kt_per_day": 58.4,
+      "rmse_kt": 7.77,
+      "AICc": 119.59,
+      "delta_AICc": 17.09,
+      "akaike_weight": 0.0
+    }
+  ],
+  "residual_lag1": {
+    "Two-stage logistic": 0.34,
+    "Logistic": 0.54,
+    "Gompertz": 0.53,
+    "Richards": 0.53
+  },
+  "growth_robustness": [
+    {
+      "check": "All positions, genesis to peak (baseline)",
+      "lead_AICc": "14.2",
+      "verdict": "decisive"
+    },
+    {
+      "check": "Drop any one of the first 22 positions",
+      "lead_AICc": "11.6 to 16.2",
+      "verdict": "decisive"
+    },
+    {
+      "check": "Drop the 135 kt position (20 Oct 06:00 UTC)",
+      "lead_AICc": "12.6",
+      "verdict": "decisive"
+    },
+    {
+      "check": "Drop the 155 kt position (20 Oct 12:00 UTC)",
+      "lead_AICc": "7.3",
+      "verdict": "clear"
+    },
+    {
+      "check": "Drop the 160 kt position (20 Oct 18:00 UTC)",
+      "lead_AICc": "2.6",
+      "verdict": "meaningful"
+    },
+    {
+      "check": "End the window 12 h before the peak",
+      "lead_AICc": "-5.5",
+      "verdict": "single curve wins"
+    }
+  ],
+  "whole_life_curve": {
+    "peak_kt": 147.7,
+    "peak_day": 5.14,
+    "shape_a": 3.63,
+    "rmse_kt": 11.91
+  },
+  "rise_and_decay": {
+    "Rise rate, typhoon strength to peak (m/s per day)": 10.9,
+    "Decay rate, peak to last position (m/s per day)": 15.1,
+    "Decay / rise (Champi, to last position)": 1.38,
+    "Decay / rise, lowest over end points": 1.02,
+    "Decay / rise, highest over end points": 1.73,
+    "Decay / rise (Emanuel 2000 average)": 0.67,
+    "Wind lost since peak (kt)": 110.0,
+    "Wind at last position (kt)": 50.0
+  },
+  "size": {
+    "First gale-force radius reported (UTC)": "2026-10-15 12:00:00",
+    "Gale zone at first report, average diameter (km)": "213",
+    "Gale zone at peak wind, average diameter (km)": "806",
+    "Gale zone at its largest, average diameter (km)": "1023",
+    "Gale zone largest at (UTC)": "2026-10-21 18:00:00",
+    "Wind when gale zone was largest (kt)": "135",
+    "Widest single gale radius (km)": "574",
+    "Outer edge (ROCI) diameter, range (km)": "741 to 1,370",
+    "Eyewall radius (RMW) at first position (km)": "65",
+    "Tightest eyewall radius (km)": "9",
+    "Tightest eyewall first reached (UTC)": "2026-10-17 06:00:00"
+  },
+  "gale_reaches_taiwan": {
+    "first_utc": "2026-10-22 06:00:00",
+    "last_utc": "2026-10-24 06:00:00",
+    "first_taiwan_time": "2026-10-22 14:00:00",
+    "last_taiwan_time": "2026-10-24 14:00:00",
+    "hours_first_to_last_position": "48.0",
+    "closest_km": "48"
+  },
+  "peak_vs_near_taiwan": {
+    "Peak (anywhere)": {
+      "time_utc": "2026-10-20 18:00:00",
+      "taiwan_time": "2026-10-21 02:00:00",
+      "wind_kt": "160",
+      "category": "Cat 5",
+      "pressure_hpa": "895",
+      "distance_km": "1224"
+    },
+    "Strongest within 300 km of Taiwan": {
+      "time_utc": "2026-10-23 06:00:00",
+      "taiwan_time": "2026-10-23 14:00:00",
+      "wind_kt": "105",
+      "category": "Cat 3",
+      "pressure_hpa": "949",
+      "distance_km": "181"
+    },
+    "Closest to Taiwan": {
+      "time_utc": "2026-10-23 18:00:00",
+      "taiwan_time": "2026-10-24 02:00:00",
+      "wind_kt": "95",
+      "category": "Cat 2",
+      "pressure_hpa": "951",
+      "distance_km": "48"
+    }
+  },
+  "par_window": {
+    "first_position_inside_utc": "2026-10-20 06:00:00",
+    "last_position_inside_utc": "2026-10-24 00:00:00",
+    "positions_inside": "16"
+  }
+}
